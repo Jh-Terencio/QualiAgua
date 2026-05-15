@@ -94,14 +94,27 @@ Para manter compatibilidade com o restante do pipeline, todos os anos são unifi
 QualiAgua/
 ├── Articles/                              # Artigos e referências (PIBIC, ICCSA, LD)
 ├── Code/
-│   └── FetchAndTreatRawData/
-│       ├── data_loader.ipynb              # Baixa a planilha bruta do INEA
-│       └── treat_raw_data.ipynb           # Trata, padroniza e consolida os anos
+│   ├── FetchAndTreatRawData/
+│   │   ├── data_loader.ipynb              # Baixa a planilha bruta do INEA
+│   │   └── treat_raw_data.ipynb           # Trata, padroniza e consolida os anos
+│   └── Pipeline/                          # Pipeline de imputação por GAN (em scaffolding)
+│       ├── 01_EDA/                        # Análise exploratória
+│       ├── 02_Preprocessing/              # Preparação para a GAIN
+│       ├── 03_Baselines/                  # Imputação clássica (referência)
+│       ├── 04_GAIN/                       # Modelo principal
+│       ├── 05_Evaluation/                 # Comparação GAIN × baselines
+│       ├── 06_PostImputation/             # Análises sobre dataset imputado
+│       └── README.md                      # Visão geral e índice das etapas
 ├── Data/
 │   ├── RawData/
 │   │   └── WaterQualityRawData.xlsx       # Saída do data_loader
-│   └── IntermediaryData/
-│       └── WaterQualityInitialData.xlsx   # Saída do treat_raw_data
+│   ├── IntermediaryData/
+│   │   └── WaterQualityInitialData.xlsx   # Saída do treat_raw_data
+│   └── Pipeline/                          # Outputs intermediários do Pipeline
+│       ├── 02_processed/
+│       ├── 03_baselines/
+│       ├── 04_gain/
+│       └── 06_imputed/
 ├── requirements.txt                       # Dependências Python
 ├── .gitignore
 └── README.md
@@ -109,15 +122,22 @@ QualiAgua/
 
 ## Pipeline atual
 
-O fluxo atual é composto por dois notebooks executados em sequência:
+O projeto se divide em duas etapas:
 
-### 1. `data_loader.ipynb` — Coleta
+- **Coleta + tratamento** (`Code/FetchAndTreatRawData/`, descrito abaixo) — pronto.
+- **Imputação por GAN** (`Code/Pipeline/`, em scaffolding) — ver `Code/Pipeline/README.md` para o detalhamento das 6 etapas (EDA → Pré-processamento → Baselines → GAIN → Avaliação → Pós-imputação).
+
+### Coleta e tratamento
+
+O fluxo é composto por dois notebooks executados em sequência:
+
+#### 1. `data_loader.ipynb` — Coleta
 
 Faz scraping leve da página do INEA, localiza o link cujo texto contém "Dados Brutos" e baixa o `.xlsx` para `Data/RawData/WaterQualityRawData.xlsx`.
 
 Bibliotecas: `requests`, `beautifulsoup4`.
 
-### 2. `treat_raw_data.ipynb` — Tratamento
+#### 2. `treat_raw_data.ipynb` — Tratamento
 
 Lê a planilha bruta e produz o dataset consolidado. As principais etapas são:
 
@@ -148,10 +168,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Depois, abrir os notebooks em ordem:
+Depois, abrir os notebooks de coleta/tratamento em ordem:
 
 1. `Code/FetchAndTreatRawData/data_loader.ipynb` — executa o download da planilha bruta.
 2. `Code/FetchAndTreatRawData/treat_raw_data.ipynb` — gera `Data/IntermediaryData/WaterQualityInitialData.xlsx`.
+
+A partir daí, seguir as etapas do `Code/Pipeline/` na ordem `01_EDA → 02_Preprocessing → 03_Baselines → 04_GAIN → 05_Evaluation → 06_PostImputation`. Cada subpasta tem seu próprio README com objetivo, entregáveis e critério de aceite.
 
 ## Esquema do dataset final
 

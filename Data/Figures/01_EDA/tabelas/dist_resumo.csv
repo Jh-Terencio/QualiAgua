@@ -1,0 +1,14 @@
+variavel,n,skew,kurtosis,shapiro_p,anderson_stat,transformacao_sugerida,lambda_boxcox,skew_depois,kurtosis_depois
+DBO,642,3.774,26.04,2.068e-31,29.87,yeo-johnson,0.07826,0.004198,0.2775
+OD,635,1.191,1.864,7.255e-18,10.77,yeo-johnson,0.2824,-0.02384,-0.3045
+Nitrato,337,8.684,88.9,2.047e-35,96.79,boxcox,-0.3935,0.1891,-1.03
+Nitrogênio Amoniacal Total,497,3.393,15.91,9.636e-30,36.8,yeo-johnson,-0.07845,0.00636,-0.328
+Fósforo Total,624,13.38,182.5,9.474e-48,234,boxcox,-0.1346,-0.4004,8.915
+Condutividade,635,9.248,160.7,3.788e-36,22.8,boxcox,0.3818,0.07926,2.25
+pH,639,0.7079,1.185,9.782e-11,6.005,identidade,,0.7079,1.185
+Turbidez,631,9.542,115,1.1e-42,97.22,boxcox,0.02785,0.0009714,0.1088
+Temperatura da Água,629,0.2429,-0.2364,7.463e-06,3.329,identidade,,0.2429,-0.2364
+Sólidos Suspensos Totais,157,2.604,12.6,7.046e-13,3.985,boxcox,0.2911,0.09515,1.934
+Coliformes Termotolerantes,494,2.885,7.631,1.33e-34,92.07,boxcox,0.06865,-0.0342,-0.585
+Cianobacterias,133,2.996,9.076,1.743e-19,27.82,boxcox,-0.1766,0.1708,-1.319
+Microcistinas,52,0.6762,-0.612,0.0004625,1.545,identidade,,0.6762,-0.612

@@ -1,0 +1,14 @@
+variavel,sazonalidade_aparente,kruskal_H,kruskal_p,tendencia_aparente,rho_tendencia,p_tendencia,lag_significativo,acf_no_lag
+DBO,sim,23.63,0.01438,sim,-0.09435,0.01679,1,0.3234
+OD,sim,23.29,0.01609,sim,0.1399,0.0004075,1,0.4031
+Nitrato,sim,40.89,2.515e-05,sim,0.1309,0.01624,1,0.3929
+Nitrogênio Amoniacal Total,sim,63.65,1.931e-09,sim,-0.1524,0.0006533,1,0.6131
+Fósforo Total,sim,28.23,0.002983,sim,0.1216,0.002344,1,0.4011
+Condutividade,sim,34.99,0.0002486,sim,0.1086,0.006144,1,0.6436
+pH,sim,71.99,5.094e-11,nao,0.01956,0.6216,1,0.4026
+Turbidez,nao,18.7,0.06663,sim,0.114,0.004142,1,0.2883
+Temperatura da Água,sim,352.9,5.831e-69,nao,0.003874,0.9227,1,0.6903
+Sólidos Suspensos Totais,sim,44.83,5.195e-06,nao,-0.145,0.07008,1,0.5456
+Coliformes Termotolerantes,nao,14.23,0.2204,sim,-0.1241,0.005743,1,0.2136
+Cianobacterias,sim,24.75,0.005844,sim,-0.2463,0.004265,,
+Microcistinas,sim,20.89,0.003944,nao,-0.2649,0.05772,,

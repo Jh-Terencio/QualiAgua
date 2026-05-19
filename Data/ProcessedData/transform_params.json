@@ -1,0 +1,55 @@
+{
+  "DBO": {
+    "tipo": "yeo-johnson",
+    "lambda": 0.07826
+  },
+  "OD": {
+    "tipo": "yeo-johnson",
+    "lambda": 0.2824
+  },
+  "Nitrato": {
+    "tipo": "boxcox",
+    "lambda": -0.3935
+  },
+  "Nitrogênio Amoniacal Total": {
+    "tipo": "yeo-johnson",
+    "lambda": -0.07845
+  },
+  "Fósforo Total": {
+    "tipo": "boxcox",
+    "lambda": -0.1346,
+    "alerta": "kurtosis_residual_alta"
+  },
+  "Condutividade": {
+    "tipo": "boxcox",
+    "lambda": 0.3818
+  },
+  "pH": {
+    "tipo": "identidade",
+    "lambda": null
+  },
+  "Turbidez": {
+    "tipo": "boxcox",
+    "lambda": 0.02785
+  },
+  "Temperatura da Água": {
+    "tipo": "identidade",
+    "lambda": null
+  },
+  "Sólidos Suspensos Totais": {
+    "tipo": "boxcox",
+    "lambda": 0.2911
+  },
+  "Coliformes Termotolerantes": {
+    "tipo": "boxcox",
+    "lambda": 0.06865
+  },
+  "Cianobacterias": {
+    "tipo": "boxcox",
+    "lambda": -0.1766
+  },
+  "Microcistinas": {
+    "tipo": "identidade",
+    "lambda": null
+  }
+}

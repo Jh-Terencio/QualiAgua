@@ -1,0 +1,120 @@
+{
+  "n_train": 533,
+  "n_val": 34,
+  "n_test": 90,
+  "n_total": 657,
+  "anos_train": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "anos_val": [
+    2023
+  ],
+  "anos_test": [
+    2024,
+    2025
+  ],
+  "cobertura_variaveis": {
+    "train": {
+      "DBO": 530,
+      "OD": 527,
+      "Nitrato": 252,
+      "Nitrogênio Amoniacal Total": 386,
+      "Fósforo Total": 530,
+      "Condutividade": 531,
+      "pH": 526,
+      "Turbidez": 527,
+      "Temperatura da Água": 519,
+      "Sólidos Suspensos Totais": 126,
+      "Coliformes Termotolerantes": 492,
+      "Cianobacterias": 133,
+      "Microcistinas": 24
+    },
+    "val": {
+      "DBO": 34,
+      "OD": 34,
+      "Nitrato": 12,
+      "Nitrogênio Amoniacal Total": 34,
+      "Fósforo Total": 34,
+      "Condutividade": 32,
+      "pH": 34,
+      "Turbidez": 34,
+      "Temperatura da Água": 34,
+      "Sólidos Suspensos Totais": 15,
+      "Coliformes Termotolerantes": 2,
+      "Cianobacterias": 0,
+      "Microcistinas": 28
+    },
+    "test": {
+      "DBO": 78,
+      "OD": 74,
+      "Nitrato": 73,
+      "Nitrogênio Amoniacal Total": 77,
+      "Fósforo Total": 60,
+      "Condutividade": 72,
+      "pH": 79,
+      "Turbidez": 70,
+      "Temperatura da Água": 76,
+      "Sólidos Suspensos Totais": 16,
+      "Coliformes Termotolerantes": 0,
+      "Cianobacterias": 0,
+      "Microcistinas": 0
+    }
+  },
+  "cobertura_estacoes": {
+    "train": {
+      "CM320": 90,
+      "JC341": 10,
+      "JC342": 90,
+      "MR361": 90,
+      "MR363": 8,
+      "MR369": 90,
+      "TJ303": 89,
+      "TJ306": 66
+    },
+    "val": {
+      "CM320": 6,
+      "JC341": 0,
+      "JC342": 6,
+      "MR361": 7,
+      "MR363": 0,
+      "MR369": 7,
+      "TJ303": 6,
+      "TJ306": 2
+    },
+    "test": {
+      "CM320": 18,
+      "JC341": 0,
+      "JC342": 18,
+      "MR361": 18,
+      "MR363": 0,
+      "MR369": 18,
+      "TJ303": 18,
+      "TJ306": 0
+    }
+  },
+  "gaps_conscientes": {
+    "variaveis_ausentes_val": [
+      "Cianobacterias"
+    ],
+    "variaveis_ausentes_test": [
+      "Coliformes Termotolerantes",
+      "Cianobacterias",
+      "Microcistinas"
+    ],
+    "estacoes_so_em_train": [
+      "JC341",
+      "MR363"
+    ],
+    "estacao_ausente_test": "TJ306"
+  }
+}

@@ -51,5 +51,10 @@
   "Microcistinas": {
     "tipo": "identidade",
     "lambda": null
+  },
+  "ano_norm": {
+    "tipo": "linear",
+    "a": 2.0,
+    "b": -1.0
   }
 }

@@ -22,16 +22,16 @@ O projeto consolida séries históricas anuais (**2012–2025**) em uma base pad
 
 ## Objetivo
 
-O INEA disponibiliza uma planilha pública com medições anuais de qualidade da água para centenas de estações de monitoramento no estado do Rio de Janeiro. Por se tratar de coletas pontuais com metodologias variando ao longo dos anos, o dataset apresenta forte esparsidade: várias variáveis de interesse só foram medidas em alguns anos ou em alguns pontos. **Zero linhas têm as 13 variáveis simultaneamente preenchidas** — imputação é obrigatória para qualquer análise multivariada.
+O INEA publica anualmente uma planilha com medições de qualidade da água de centenas de estações de monitoramento no estado do Rio de Janeiro. Como as coletas são pontuais e a metodologia variou ao longo dos anos, o dataset é fortemente esparso: várias variáveis de interesse foram medidas apenas em alguns anos ou em alguns pontos. **Nenhuma linha tem as 13 variáveis simultaneamente preenchidas** — qualquer análise multivariada exige imputação prévia.
 
-O objetivo do projeto é:
+A proposta do projeto é construir o pipeline completo dessa imputação para a Lagoa de Jacarepaguá, em seis frentes:
 
 1. **Coletar** automaticamente a planilha bruta do INEA.
-2. **Padronizar** os dados em uma base consolidada que reconcilie as diferenças estruturais entre os anos (renomeações, mudanças de convenção do LD, layouts diferentes em 2024/2025).
-3. **Analisar** a estrutura de cobertura, distribuições, correlações, sazonalidade, estrutura espacial e censura por LD.
-4. **Pré-processar** o dataset para um formato denso, padronizado e auditável consumível pela GAIN.
-5. **Treinar e avaliar** um modelo GAIN que supere baselines clássicos (KNN, MICE) na imputação.
-6. **Publicar** o dataset imputado e o IQA da Lagoa de Jacarepaguá ao longo de 2012–2025.
+2. **Padronizar** os dados em uma base consolidada que reconcilie as diferenças estruturais entre anos (renomeações, mudanças de convenção do LD, layouts distintos em 2024/2025).
+3. **Analisar** cobertura, distribuições, correlações, sazonalidade, estrutura espacial e censura por LD.
+4. **Pré-processar** o dataset em um formato denso, padronizado e auditável, consumível pela GAIN.
+5. **Treinar** a GAIN e avaliar se supera baselines clássicos (KNN, MICE) na imputação.
+6. **Publicar** o dataset imputado e o Índice de Qualidade da Água (IQA) da Lagoa de Jacarepaguá no período 2012–2025.
 
 ## Estado atual
 

@@ -1,6 +1,6 @@
 var1,var2,rho,pvalue,n_pares
-Condutividade,Turbidez,-0.5989,1.025e-61,621
-DBO,Turbidez,0.5613,1.705e-53,629
-OD,pH,0.5472,2.476e-50,628
-DBO,Condutividade,-0.5053,2.559e-42,633
-Coliformes Termotolerantes,Cianobacterias,0.5011,2.126e-08,111
+Condutividade,Turbidez,-0.5915,3.501e-58,603
+DBO,Turbidez,0.572,2.265e-54,611
+OD,pH,0.5451,1.422e-48,611
+DBO,Condutividade,-0.5141,8.878e-43,615
+DBO,Fósforo Total,0.5118,1.951e-41,601

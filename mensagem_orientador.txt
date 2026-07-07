@@ -1,0 +1,28 @@
+Boa tarde, professor! Passando uma atualização do projeto desde a EDA. Concluí duas etapas completas (pré-processamento e baselines) e iniciei a etapa do modelo GAIN.
+
+1) PRÉ-PROCESSAMENTO (concluído)
+Transformei a base consolidada em um formato pronto para o modelo, com 6 notebooks reproduzíveis:
+- Transformações Box-Cox/Yeo-Johnson para reduzir assimetria (skew de até 13,4 caiu para ~0), com inversão verificada (erro < 10^-9).
+- Features temporais (tendência, sazonalidade cíclica, regime úmido/seco) e one-hot de estação e de censura (limite de detecção).
+- Normalização para [-1, 1] e split temporal sem vazamento: treino 2012-2022 (515 coletas), validação 2023 (34), teste 2024-2025 (90).
+- Protocolo de mascaramento definido: máscara real M (o que é faltante de verdade) + máscara artificial B (esconde valores conhecidos para avaliar a imputação), com taxas por variável para proteger as de baixa cobertura.
+
+2) BASELINES (concluído)
+Avaliei 7 métodos clássicos de imputação sob protocolo único (3 sementes, mesmas células escondidas, erro medido na escala física original):
+- Simples: média global, média por estação, mediana, forward fill.
+- ML: KNN, MICE e MissForest.
+Principais resultados:
+- O melhor baseline é o KNN (RMSE normalizado 0,313) — esse é o número que a GAIN precisa superar. MICE ficou logo atrás (0,333).
+- A média por estação vence os baselines simples, confirmando quantitativamente a heterogeneidade espacial que vimos na EDA.
+- Dois casos difíceis mapeados: Nitrato resiste a todos os métodos (nenhum bate a média global) e Fósforo Total tem o erro dominado pelos picos de eutrofização, que nenhum método clássico recupera.
+
+3) GAIN (em andamento — primeiro de três notebooks concluído)
+Implementei a GAIN (Yoon et al. 2018) em PyTorch, na versão condicional: o gerador imputa as 11 variáveis de qualidade da água condicionado nas features de contexto (estação, sazonalidade, censura), sem inventá-las.
+- Pipeline de treino completo: loop adversarial, curvas de loss, RMSE de validação por iteração, checkpoint.
+- Resultado inicial (hiperparâmetros padrão da literatura, sem tuning): RMSE 0,296 na validação vs 0,274 do KNN no mesmo protocolo — já comparável ao melhor baseline antes de qualquer ajuste.
+- Destaque: a GAIN já vence o KNN justamente em Sólidos Suspensos Totais (0,289 vs 0,573), a variável mais escassa da base (24% de cobertura), que é onde a imputação clássica mais sofre.
+- Achado de implementação relevante: a hint matrix descrita no texto do paper desestabiliza o treino neste dataset; a variante da implementação oficial dos autores resolve. Está documentado no código.
+
+Próximos passos: busca de hiperparâmetros da GAIN (o diagnóstico do treino inicial já aponta as alavancas: peso da reconstrução e controle do discriminador) e depois o diagnóstico do melhor modelo, antes da avaliação final no teste.
+
+Qualquer coisa posso mostrar os notebooks e as tabelas de resultados. Abraço!

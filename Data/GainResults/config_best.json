@@ -1,0 +1,79 @@
+{
+  "config_id": "cfg_1092",
+  "hp": {
+    "hint_rate": 0.9,
+    "alpha": 10.0,
+    "beta": 10.0,
+    "batch_size": 128,
+    "hidden": [
+      128,
+      128
+    ],
+    "lr_g": 0.001,
+    "lr_d": 0.001,
+    "n_iter": 5000
+  },
+  "seed_melhor": 42,
+  "seeds_finais": [
+    42,
+    7,
+    2026
+  ],
+  "rmse_val_por_seed": {
+    "42": 0.23551051318645477,
+    "7": 0.2764880359172821,
+    "2026": 0.2747636139392853
+  },
+  "iteracao_melhor": 1000,
+  "rmse_val_curva_norm": 0.23551051318645477,
+  "rmse_val_protocolo_etapa3": 0.23172327202932141,
+  "rmse_val_knn_protocolo": 0.2741840712314936,
+  "criterio_aceite_ok": true,
+  "n_configuracoes_busca": 31,
+  "rmse_por_variavel": {
+    "DBO": {
+      "gain": 0.25196700782769504,
+      "knn": 0.29795411427914065
+    },
+    "OD": {
+      "gain": 0.2823084000056935,
+      "knn": 0.39630400492958123
+    },
+    "Nitrato": {
+      "gain": 0.37326982237425393,
+      "knn": 0.34934371997995517
+    },
+    "Nitrogênio Amoniacal Total": {
+      "gain": 0.24633892273642502,
+      "knn": 0.3251710498517903
+    },
+    "Fósforo Total": {
+      "gain": 0.09167020638070082,
+      "knn": 0.11079835298177494
+    },
+    "Condutividade": {
+      "gain": 0.2349278925628041,
+      "knn": 0.20922770394923054
+    },
+    "pH": {
+      "gain": 0.11670989426411181,
+      "knn": 0.17488054725002922
+    },
+    "Turbidez": {
+      "gain": 0.15000286793912398,
+      "knn": 0.1868775877594715
+    },
+    "Temperatura da Água": {
+      "gain": 0.14681451850436952,
+      "knn": 0.1762155718540618
+    },
+    "Sólidos Suspensos Totais": {
+      "gain": 0.504667127302672,
+      "knn": 0.5733428000099935
+    },
+    "Coliformes Termotolerantes": {
+      "gain": 0.10955736262236783,
+      "knn": 0.186771960436354
+    }
+  }
+}

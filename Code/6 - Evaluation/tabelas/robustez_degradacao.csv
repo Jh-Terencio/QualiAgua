@@ -1,0 +1,9 @@
+metodo,RMSE@0.1,RMSE@0.5,degradacao_%,RMSE_medio
+mice,0.346,0.338,-2.128,0.34
+mediana_global,0.388,0.39,0.52,0.386
+media_global,0.376,0.38,1.093,0.376
+media_estacao,0.341,0.351,2.916,0.349
+missforest,0.328,0.347,5.79,0.342
+gain,0.308,0.343,11.462,0.323
+knn,0.292,0.327,11.795,0.312
+ffill_estacao,0.328,0.439,33.896,0.397
